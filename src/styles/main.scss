@@ -8,6 +8,7 @@
   background-size: cover;
   background-position: center;
 
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -32,7 +33,31 @@
   }
 }
 /* #endregion */
+/* #region section-title */
+.section-title {
+  margin: 0;
+  margin-bottom: 48px;
+
+  font-weight: 700px;
+  font-style: 32px;
+  line-height: 32px;
+  letter-spacing: 0%;
+  text-align: left;
+
+  @include onTablet {
+    margin-bottom: 64px;
+    font-style: 40px;
+  }
+
+  @include onDesktop {
+    font-style: 48px;
+  }
+}
+/* #endregion */
 /* #region menu */
+
+
+
 
 .top-bar {
   padding-block: 24px;
@@ -106,6 +131,50 @@
 
 }
 /* #endregion */
+/* #region main */
+.main {
+  display: grid;
+  row-gap: 96px;
+  padding-block:96px;
+
+}
+
+@include contentPaddingInline;
+
+@include onTablet {
+  padding-block: 120px;
+  row-gap: 120px;
+}
+
+/* #endregion */
+/* #region recommended */
+.recommended {
+  margin: 0;
+
+  &__products {
+  display: grid;
+  row-gap: 40px;
+  }
+
+  @include onTablet {
+    justify-items: center ;
+
+  }
+
+  @include onDesktop {
+    justify-items: stretch;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 24px;
+  }
+}
+/* #endregion */
+/* #region products */
+.product {
+  &__photo {
+  width: 100%;
+}
+}
+/* #endregion */
 /* #region icon */
 .icon {
   display: block;
@@ -132,7 +201,6 @@
 }
 /* #endregion */
 /* #region footer */
-.footer
 /* #endregion */
 /* #region nav */
 .nav {
@@ -145,7 +213,7 @@
   }
 
   &__list {
-    margin: 0;
+    margin-bottom: 48px;
     padding: 0;
     list-style: none;
     display: flex;

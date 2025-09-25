@@ -55,5 +55,8 @@
       "backstop": false,
       "cypress": true
     }
+  },
+  "dependencies": {
+    "sass": "^1.93.2"
   }
 }

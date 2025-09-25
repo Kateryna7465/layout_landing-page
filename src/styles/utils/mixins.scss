@@ -16,4 +16,10 @@
   @include onTablet {
     padding: 72px;
   }
+
+  @include onDesktop() {
+    min-width: 1020px;
+    margin-inline: auto ;
+
+  }
 }
