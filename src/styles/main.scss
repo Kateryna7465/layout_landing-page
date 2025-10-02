@@ -2,16 +2,21 @@
 @import './utils/mixins';
 /* #region header */
 .header {
-  box-sizing: border-box;
-  height: 100vh;
+
   background-image: url(../images/header-bg-mobile.png);
   background-size: cover;
   background-position: center;
 
 
+
+
+  &__content {
+  height: 100vh;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  }
 
   &__title {
     margin: 0;
@@ -29,8 +34,8 @@
 
   &__bottom {
     padding-bottom: 40px;
-    @include contentPaddingInline;
-  }
+
+}
 }
 /* #endregion */
 /* #region section-title */
@@ -61,8 +66,6 @@
 
 .top-bar {
   padding-block: 24px;
-  @include contentPaddingInline;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -99,10 +102,6 @@
 
   }
 
-  &__content {
-    @include contentPaddingInline;
-
-  }
 
   &__phone-number {
     color: inherit;
@@ -133,18 +132,107 @@
 /* #endregion */
 /* #region main */
 .main {
+  background-color: #fff;
+
+  &__content {
   display: grid;
   row-gap: 96px;
   padding-block:96px;
 
-}
+  @include contentPaddingInline;
 
-@include contentPaddingInline;
-
-@include onTablet {
+  @include onTablet {
   padding-block: 120px;
   row-gap: 120px;
+  }
+ }
 }
+
+/* #endregion */
+/* #region about-us */
+
+.about-us {
+
+  background: #FCFAEF;
+
+  --columns: 2;
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include onTablet {
+  --columns: 6;
+  column-gap: 24px;
+  }
+
+   @include onDesktop {
+    --columns: 12;
+  }
+
+  &__photo {
+   margin: 0;
+   padding: 0;
+   display: block;
+   width: 100vw;
+
+  }
+
+
+  &__content {
+
+
+
+
+    display: grid;
+
+  }
+
+  &__title {
+  grid-column: 1 / -1 ;
+
+  @include onTablet {
+  grid-column: 1 / 4;
+  }
+
+  @include onDesktop {
+  grid-column: span 5;
+  }
+
+
+    font-size: 32px;
+    font-style: bold;
+    line-height: 32px;
+    font-weight: 700;
+    letter-spacing: 0;
+
+
+
+  }
+
+  &__description {
+    grid-column: 1 / -1;
+
+     @include onTablet {
+    grid-column: 4 / 7;
+ }
+
+  @include onDesktop {
+  grid-column: span 7;
+
+  }
+
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: 0.15px;
+
+  }
+
+}
+
+
+
 
 /* #endregion */
 /* #region recommended */
@@ -154,7 +242,6 @@
   &__products {
   display: grid;
   row-gap: 40px;
-  }
 
   @include onTablet {
     justify-items: center ;
@@ -166,6 +253,7 @@
     grid-template-columns: repeat(3, 1fr);
     column-gap: 24px;
   }
+ }
 }
 /* #endregion */
 /* #region products */
