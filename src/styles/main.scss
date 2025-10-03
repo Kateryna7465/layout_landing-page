@@ -27,6 +27,7 @@
     line-height: 100%;
     letter-spacing: 0px;
     padding-bottom: 40px;
+
     @include contentPaddingInline;
 
     color: $main-text-color;
@@ -331,11 +332,11 @@
 
   scroll-behavior: smooth;
 
-  &__page__body {
+  &__body {
     margin: 0;
   }
 
-  &__page__menu {
+  &__menu {
     position: fixed;
     top: 0;
     right: 0;

@@ -17,8 +17,8 @@
     padding: 72px;
   }
 
-  @include onDesktop() {
-    min-width: 1020px;
+  @include onDesktop {
+    max-width: 1020px;
     margin-inline: auto ;
 
   }
