@@ -19,7 +19,8 @@
 
   @include onDesktop {
     max-width: 1020px;
-    margin-inline: auto ;
+    margin-inline: auto;
+    padding-inline: 120px;
 
   }
 }
@@ -28,3 +29,36 @@
 @include  contentPaddingInline;
 
 }
+
+@mixin pageGrid {
+   margin: 48px 0;
+    display: grid;
+    column-gap: 20px;
+    --columns: 2;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+
+
+    @include onTablet {
+
+      --columns: 6;
+    column-gap: 24px;
+  }
+
+   @include onDesktop {
+    --columns: 12;
+
+   }
+
+}
+
+@mixin hover($property, $toValue) {
+  transition: #{$property} $effectDuration;
+  &:hover {
+    #{$property}: $toValue;
+  }
+}
+
+
+
+
